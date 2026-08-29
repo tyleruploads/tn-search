@@ -1,18 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
 :root {
-    --primary-color: #121E54;
-    --site-black: #030303;
-    --muted-color: #543012;
-    --muted-color-2: #355C47;
+    --primary-color: #0f172a;
+    --site-white: #f8fafc;
+    --muted-color: #1e293b;
+    --muted-color-2: #3b82f6;
 }
 
 body {
     background: var(--primary-color);
+    color: var(--site-white);
 
     display: flex;
     flex-direction: column;
     height: 100vh;
 
     align-items: center;
+}
+
+h1 {
+    margin-top: 5px;
+}
+
+footer {
+    margin-bottom: 5px;
 }
 
 #div-search {
@@ -34,21 +50,41 @@ body {
 
 #input-search {
     background: transparent;
+    color: var(--site-white);
     width: 60vw;
-    height: 30px;
-    border: 2px solid var(--site-black);
+    height: 44px;
+    font-size: 1.25rem;
+    border-radius: 8px;
+    padding: 0px 12px;
 }
 
 #button-search {
-    font-size: 2rem;
+    display: inline-flex;
+    align-items: center;
+
+    color: var(--site-white);
+    font-size: 1rem;
+    font-weight: 600;
+
+    height: 44px;
     background: var(--muted-color-2);
-    border: 2px solid var(--site-black);
+    border-radius: 8px;
+    padding: 4px 16px;
 
     transition: all 0.1s ease-in-out;
 }
 
+#input-search, #button-search {
+    border: 1px solid rgba(255, 255, 255, 0.2)
+}
+
+#input-search:focus {
+    outline: none;
+    border-color: var(--muted-color-2);
+}
+
 #button-search:hover {
     cursor: pointer;
-    font-size: 2.2rem;
-    rotate: 15deg;
+    transform: translateY(-10px);
+    opacity: 0.9;
 }
