@@ -48,6 +48,14 @@ footer {
     gap: 10px;
 }
 
+select {
+    width: 120px;
+    padding: 4px 8px;
+    font-size: 14px;
+    height: auto;
+    box-sizing: border-box;
+}
+
 #input-search {
     background: transparent;
     color: var(--site-white);

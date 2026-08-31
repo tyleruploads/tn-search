@@ -1,3 +1,4 @@
+const engineSelect = document.getElementById('engineSelect');
 const inputSearch = document.getElementById('input-search');
 const buttonSearch = document.getElementById('button-search');
 
@@ -34,17 +35,34 @@ function looksLikeURL(input) {
     }
 }
 
+function checkIfTool() {
+    const selectedOption = engineSelect.options[engineSelect.selectedIndex];
+    const urlPattern = selectedOption.getAttribute('data-category');
+
+    return urlPattern === 'tool';
+}
+
+function getSearchURL(query) {
+    const selectedOption = engineSelect.options[engineSelect.selectedIndex];
+    const urlPattern = selectedOption.getAttribute('data-url');
+    
+    return urlPattern.replace('{query}', query);
+}
+
 function search() {
     const userInput = inputSearch.value;
-    let url;
+    let url; 
 
-    // If it is to a specific URL, simply go to the URL
+    // If it is to a specific URL, simply go to the URL, if they did not select a tool
     const isUrl = looksLikeURL(userInput);
-    if (isUrl) {
+    if (checkIfTool() === true) {
+        const safeSearch = encodeURIComponent(userInput);
+        url = getSearchURL(userInput);
+    } else if (isUrl) {
         url = isUrl;
     } else {
-        const search = encodeURIComponent(userInput);
-        url = `https://www.google.com/search?q=${search}`;
+        const safeSearch = encodeURIComponent(userInput);
+        url = getSearchURL(safeSearch);
     }
 
     window.location.href = url;
