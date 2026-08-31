@@ -33,13 +33,15 @@ footer {
 
 #div-search {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
     justify-content: center;
     align-items: center;
 
     margin-top: auto;
     margin-bottom: auto;
+
+    overflow-y: scroll;
 
     background: var(--muted-color);
     width: fit-content;

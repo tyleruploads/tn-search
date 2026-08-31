@@ -24,6 +24,11 @@ function looksLikeURL(input) {
         // Go through with other checks if failed
     }
 
+    // If there is a / but no ., return false. This is to fix the past issue of math equations like '34/8' getting turned into an IP Addresses using HTTPS
+    if (trimmed.includes('/') && !trimmed.includes('.')) {
+        return false;
+    }
+
     // Add the https protocol to check structure
     const inputWithScheme = trimmed.startsWith('http://') || trimmed.startsWith('https://') ? trimmed : 'https://' + trimmed;
 
