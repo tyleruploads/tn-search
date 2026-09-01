@@ -19,8 +19,7 @@ function startTimeLoop() {
 function looksLikeURL(input) {
     // If it contains :// but is not HTTPS or HTTP, treat it like a URL
     // This is because there are so many protocals
-    // Users wouldn't want for example a file:// search to go to a search engine or tool
-    // Not using lowercase version because for protocals like file:// you may need uppercase
+    // Not using lowercase version because certain protocals may require specific casing, like data://
     if (input.includes('://') && !input.startsWith('https://') && !input.startsWith('http://') && input.indexOf('://') < 10) {
         return input.trim();
     }

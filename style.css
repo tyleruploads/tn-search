@@ -64,7 +64,7 @@ time {
     gap: 10px;
 }
 
-select {
+datalist {
     width: 120px;
     padding: 4px 8px;
     font-size: 14px;
