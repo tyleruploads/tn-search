@@ -14,15 +14,16 @@
             <time id="time">&nbsp</time>
         </div>
         <div id="engineAndQueryDiv"</div>
-        <datalist id="engineSelect">
-            <option disabled class="select-header">- The Classics -</option>
+        <input list="engineDatalist" id="engineSelectInput" name="engineSelectChoice" placeholder="Type to search...">
+        <datalist id="engineDatalist">
+            <option class="select-header">- The Classics -</option>
 
             <option data-url="https://google.com/search?q={query}">Google</option>
             <option data-url="https://bing.com/search?q={query}">Bing</option>
             <option data-url="https://search.yahoo.com/search?q={query}">Yahoo</option>
 
 
-            <option disabled class="select-header">- Privacy -</option>
+            <option class="select-header">- Privacy -</option>
 
             <option data-url="https://duckduckgo.com/search?q={query}" selected>DuckDuckGo</option>
             <option data-url="https://startpage.com/search?q={query}">Startpage</option>
@@ -33,15 +34,15 @@
             <option data-url="https://swisscows.com/en/web?query={query}">Swisscows</option>
             <option data-url="https://librex.rlp.schule/search.php?q={query}">LibreX</option>
 
-            <option disabled class="select-header">- AI -</option>
+            <option class="select-header">- AI -</option>
 
             <option data-url="https://www.perplexity.ai/search/new?q={query}">Perplexity AI</option>
             <option data-url="https://chatgpt.com/?q={query}">ChatGPT</option>
 
 
-            <option disabled class="select-header">- Tools -</option>
+            <option class="select-header">- Tools -</option>
 
-            <option disabled class="select-header">- Code -</option>
+            <option class="select-header">- Code -</option>
 
             <option data-category="tool" data-url="https://github.com/search?type=code&q={query}">GitHub Code</option>
             <option data-category="tool" data-url="https://gitlab.com/search?search={query}">GitLab Code</option>
@@ -50,7 +51,7 @@
             <option data-category="tool" data-url="https://codepen.io/search?q={query}">CodePen</option>
 
 
-            <option disabled class="select-header">- Academic & Research -</option>
+            <option class="select-header">- Academic & Research -</option>
 
            <option data-category="tool" data-url="https://scholar.google.com/scholar?q={query}">Google Scholar</option>
            <option data-category="tool" data-url="https://www.semanticscholar.org/search?q={query}">Semantic Scholar</option>
@@ -58,7 +59,7 @@
            <option data-category="tool" data-url="https://pubmed.ncbi.nlm.nih.gov/?term={query}">NIH PubMed</option>
            <option data-category="tool" data-url="https://www.crossref.org/site-search/?query={query}">Crossref</option>
 
-           <option disabled class="select-header">- Encyclopedia -</option>
+           <option class="select-header">- Encyclopedia -</option>
 
            <option data-category="tool" data-url="https://en.wikipedia.org/w/index.php?search={query}&title=Special:Search&profile=advanced&fulltext=1">Wikipedia</option>
            <option data-category="tool" data-url="https://en.wiktionary.org/w/index.php?search={query}&title=Special%253ASearch&profile=advanced&fulltext=1">Wiktionary</option>
@@ -66,7 +67,7 @@
            <option data-category="tool" data-url="https://www.britannica.com/search?query={query}">Britannica</option>
 
 
-            <option disabled class="select-header">- Packages -</option>
+            <option class="select-header">- Packages -</option>
 
             <option data-category="tool" data-url="https://repology.org/projects/?search={query}">Repology</option>
             <option data-category="tool" data-url="https://pkgs.org/search/?q={query}">Linux Packages</option>
@@ -83,7 +84,7 @@
             <option data-category="tool" data-url="https://search.r-project.org/?P={query}">R Packages</option>
             <option data-category="tool" data-url="https://metacpan.org/search?q={query}">MetaCPAN</option>
 
-            <option disabled class="select-header">- Documentation -</option>
+            <option class="select-header">- Documentation -</option>
 
             <option data-category="tool" data-url="https://devdocs.io/#q={query}">DevDocs</option>
             <option data-category="tool" data-url="https://developer.mozilla.org/en-US/search?q={query}">MDN Docs</option>
@@ -93,17 +94,17 @@
             <option data-category="tool" data-url="https://doc.rust-lang.org/stable/std/index.html?search={query}">Rust Stable</option>
             <option data-category="tool" data-url="https://docs.oracle.com/search/?q={query}&category=java">Java</option>
 
-            <option disabled class="select-header">- Containers & DevOps -</option>
+            <option class="select-header">- Containers & DevOps -</option>
 
             <option data-category="tool" data-url="https://hub.docker.com/search?q={query}">Docker Hub</option> 
             <option data-category="tool" data-url="https://artifacthub.io/packages/search?ts_query_web={query}">Artifact Hub</option>
 
-            <option disabled class="select-header">- Domains & Networking -</option>
+            <option class="select-header">- Domains & Networking -</option>
     
             <option data-category="tool" data-url="https://www.godaddy.com/whois/results.aspx?domain={query}">WHOIS Lookup</option>
             <option data-category="tool" data-url="https://www.nslookup.io/ip/{query}/domain-names/">Reverse DNS</option> 
 
-            <option disabled class="select-header">- Cybersecurity -</option>
+            <option class="select-header">- Cybersecurity -</option>
 
             <option data-category="tool" data-url="https://www.virustotal.com/gui/search?query={query}">VirusTotal</option>
             <option data-category="tool" data-url="https://www.shodan.io/search?query={query}">Shodan</option> 

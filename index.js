@@ -1,5 +1,6 @@
 const timeEl = document.getElementById('time');
-const engineSelect = document.getElementById('engineSelect');
+const engineSelectInput = document.getElementById('engineSelectInput');
+const engineDatalist = document.getElementById('engineDatalist');
 const inputSearch = document.getElementById('input-search');
 const buttonSearch = document.getElementById('button-search');
 
@@ -113,6 +114,19 @@ window.addEventListener('keydown', e => {
 inputSearch.addEventListener('keydown', e => {
     if (e.key === 'Enter') {
         search();
+    }
+});
+
+engineSelectInput.addEventListener('input', (e) => {
+    const currentInputValue = e.target.value;
+
+    const matchedOption = Array.from(engineDatalist.options).find(
+        option => option.value === currentInputValue
+    );
+
+    if (matchedOption && matchedOption.classList.contains('select-header')) {
+        alert("Sorry, this option can not be selected because it is a header");
+        e.target.value = '';
     }
 });
 
