@@ -17,6 +17,14 @@ function startTimeLoop() {
 }
 
 function looksLikeURL(input) {
+    // If it contains :// but is not HTTPS or HTTP, treat it like a URL
+    // This is because there are so many protocals
+    // Users wouldn't want for example a file:// search to go to a search engine or tool
+    // Not using lowercase version because for protocals like file:// you may need uppercase
+    if (input.includes('://') && !input.startsWith('https://') && !input.startsWith('http://') && input.indexOf('://') < 10) {
+        return input.trim();
+    }
+
     const trimmed = input.trim().toLowerCase();
 
     // Reject if it contains spaces
@@ -36,7 +44,7 @@ function looksLikeURL(input) {
         }
         // Go through with other checks if failed
     }
-
+ 
     // If there is a / but no ., return false. This is to fix the past issue of math equations like '34/8' getting turned into an IP Addresses using HTTPS
     if (trimmed.includes('/') && !trimmed.includes('.')) {
         return false;
