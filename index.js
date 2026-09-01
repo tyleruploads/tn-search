@@ -62,15 +62,22 @@ function looksLikeURL(input) {
 }
 
 function checkIfTool() {
-    const selectedOption = engineSelect.options[engineSelect.selectedIndex];
-    const urlPattern = selectedOption.getAttribute('data-category');
+    currentInputValue = engineSelectInput.value;
+    const matchedOption = Array.from(engineDatalist.options).find(
+        option => option.value === currentInputValue
+    );
+    const urlPattern = matchedOption.getAttribute('data-category');
 
     return urlPattern === 'tool';
 }
 
 function getSearchURL(query) {
-    const selectedOption = engineSelect.options[engineSelect.selectedIndex];
-    const urlPattern = selectedOption.getAttribute('data-url');
+    currentInputValue = engineSelectInput.value;
+    const matchedOption = Array.from(engineDatalist.options).find(
+        option => option.value === currentInputValue
+    );
+
+    const urlPattern = matchedOption.getAttribute('data-url');
     
     return urlPattern.replace('{query}', query);
 }

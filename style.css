@@ -64,12 +64,16 @@ time {
     gap: 10px;
 }
 
-datalist {
+engineSelectInput {
     width: 120px;
     padding: 4px 8px;
     font-size: 14px;
     height: auto;
     box-sizing: border-box;
+}
+
+#engineSelectInput:focus {
+    cursor: pointer;
 }
 
 #input-search {
