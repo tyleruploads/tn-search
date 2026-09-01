@@ -10,6 +10,7 @@
     --site-white: #f8fafc;
     --muted-color: #1e293b;
     --muted-color-2: #3b82f6;
+    --site-green: #39FF14;
 }
 
 body {
@@ -29,6 +30,19 @@ h1 {
 
 footer {
     margin-bottom: 5px;
+}
+
+#div-time {
+    display: flex;
+    flex-direction: column;
+
+    align-self: center;
+}
+
+time {
+    font-size: 50px;
+
+    filter: drop-shadow(8px 5px 4px var(--site-green));
 }
 
 #div-search {

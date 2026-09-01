@@ -1,7 +1,20 @@
+const timeEl = document.getElementById('time');
 const engineSelect = document.getElementById('engineSelect');
 const inputSearch = document.getElementById('input-search');
 const buttonSearch = document.getElementById('button-search');
 
+function startTimeLoop() {
+    // Set time once at start, so it is not blank for an ENTIRE second!
+    const date = new Date;
+    timeEl.setAttribute("datetime", date);
+    timeEl.textContent = date.toLocaleTimeString('en-US', { hour12: true });
+
+    setInterval(() => {
+        const date = new Date;
+        timeEl.setAttribute("datetime", date);
+        timeEl.textContent = date.toLocaleTimeString('en-US', { hour12: true });
+    }, 1000);
+}
 
 function looksLikeURL(input) {
     const trimmed = input.trim().toLowerCase();
@@ -74,6 +87,9 @@ function search() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Start the set time loop
+    startTimeLoop();
+
     inputSearch.focus(); // Automatically focus onto input on page load
 });
 
