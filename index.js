@@ -124,6 +124,15 @@ inputSearch.addEventListener('keydown', e => {
     }
 });
 
+engineSelectInput.addEventListener('click', () => {
+    engineSelectInput.value = '';
+    try {
+        engineSelectInput.showPicker();
+    } catch (err) {
+        console.warn(`Automatic showing of engine select picker not supported: ${err}`);
+    }
+});
+
 engineSelectInput.addEventListener('input', (e) => {
     const currentInputValue = e.target.value;
 
