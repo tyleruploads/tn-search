@@ -13,105 +13,106 @@
         <div id="div-time">
             <time id="time">&nbsp</time>
         </div>
-        <div id="engineAndQueryDiv"</div>
-        <input list="engineDatalist" id="engineSelectInput" name="engineSelectChoice" placeholder="Double click or type">
+        <div id="engineAndQueryDiv">
+        <input list="engineDatalist" id="engineSelectInput" name="engineSelectChoice" placeholder="Double click or type" value="DuckDuckGo">
         <datalist id="engineDatalist">
             <option class="select-header">- The Classics -</option>
 
-            <option data-url="https://google.com/search?q={query}">Google</option>
-            <option data-url="https://bing.com/search?q={query}">Bing</option>
-            <option data-url="https://search.yahoo.com/search?q={query}">Yahoo</option>
+            <option value="Google" data-url="https://google.com/search?q={query}">Google</option>
+            <option value="Bing" data-url="https://bing.com/search?q={query}">Bing</option>
+            <option value="Yahoo" data-url="https://search.yahoo.com/search?q={query}">Yahoo</option>
 
 
             <option class="select-header">- Privacy -</option>
 
-            <option data-url="https://duckduckgo.com/search?q={query}" selected>DuckDuckGo</option>
-            <option data-url="https://startpage.com/search?q={query}">Startpage</option>
-            <option data-url="https://search.brave.com/search?q={query}">Brave</option>
-            <option data-url="https://www.mojeek.com/search?q={query}">Mojeek</option>
-            <option data-url="https://www.qwant.com/?q={query}">Qwant</option>
-            <option data-url="https://www.ecosia.org/search?q={query}">Ecosia</option>
-            <option data-url="https://swisscows.com/en/web?query={query}">Swisscows</option>
-            <option data-url="https://librex.rlp.schule/search.php?q={query}">LibreX</option>
+            <option value="DuckDuckGo" data-url="https://duckduckgo.com/search?q={query}">DuckDuckGo</option>
+            <option value="Startpage" data-url="https://startpage.com/search?q={query}">Startpage</option>
+            <option value="Brave" data-url="https://search.brave.com/search?q={query}">Brave</option>
+            <option value="Mojeek" data-url="https://www.mojeek.com/search?q={query}">Mojeek</option>
+            <option value="Qwant" data-url="https://www.qwant.com/?q={query}">Qwant</option>
+            <option value="Ecosia" data-url="https://www.ecosia.org/search?q={query}">Ecosia</option>
+            <option value="Swisscows" data-url="https://swisscows.com/en/web?query={query}">Swisscows</option>
+            <option value="LibreX" data-url="https://librex.rlp.schule/search.php?q={query}">LibreX</option>
 
             <option class="select-header">- AI -</option>
 
-            <option data-url="https://www.perplexity.ai/search/new?q={query}">Perplexity AI</option>
-            <option data-url="https://chatgpt.com/?q={query}">ChatGPT</option>
+            <option value="Perplexity AI" data-url="https://www.perplexity.ai/search/new?q={query}">Perplexity AI</option>
+            <option value="ChatGPT" data-url="https://chatgpt.com/?q={query}">ChatGPT</option>
 
 
             <option class="select-header">- Tools -</option>
 
             <option class="select-header">- Code -</option>
 
-            <option data-category="tool" data-url="https://github.com/search?type=code&q={query}">GitHub Code</option>
-            <option data-category="tool" data-url="https://gitlab.com/search?search={query}">GitLab Code</option>
-            <option data-category="tool" data-url="https://codeberg.org/explore/repos?q={query}">Codeberg</option>
-            <option data-category="tool" data-url="https://stackoverflow.com/search?q={query}">Stack Overflow</option>
-            <option data-category="tool" data-url="https://codepen.io/search?q={query}">CodePen</option>
+            <option value="GitHub Code" data-category="tool" data-url="https://github.com/search?type=code&q={query}">GitHub Code</option>
+            <option value="GitLab Code" data-category="tool" data-url="https://gitlab.com/search?search={query}">GitLab Code</option>
+            <option value="Codeberg" data-category="tool" data-url="https://codeberg.org/explore/repos?q={query}">Codeberg</option>
+            <option value="Stack Overflow" data-category="tool" data-url="https://stackoverflow.com/search?q={query}">Stack Overflow</option>
+            <option value="CodePen" data-category="tool" data-url="https://codepen.io/search?q={query}">CodePen</option>
 
 
             <option class="select-header">- Academic & Research -</option>
 
-           <option data-category="tool" data-url="https://scholar.google.com/scholar?q={query}">Google Scholar</option>
-           <option data-category="tool" data-url="https://www.semanticscholar.org/search?q={query}">Semantic Scholar</option>
-           <option data-category="tool" data-url="https://arxiv.org/search/?query={query}&searchtype=all&abstracts=show&order=-announced_date_first&size=50">arXiv</option>
-           <option data-category="tool" data-url="https://pubmed.ncbi.nlm.nih.gov/?term={query}">NIH PubMed</option>
-           <option data-category="tool" data-url="https://www.crossref.org/site-search/?query={query}">Crossref</option>
+           <option value="Google Scholar" data-category="tool" data-url="https://scholar.google.com/scholar?q={query}">Google Scholar</option>
+           <option value="Semantic Scholar" data-category="tool" data-url="https://www.semanticscholar.org/search?q={query}">Semantic Scholar</option>
+           <option value="arXiv" data-category="tool" data-url="https://arxiv.org/search/?query={query}&searchtype=all&abstracts=show&order=-announced_date_first&size=50">arXiv</option>
+           <option value="NIH PubMed" data-category="tool" data-url="https://pubmed.ncbi.nlm.nih.gov/?term={query}">NIH PubMed</option>
+           <option value="Crossref" data-category="tool" data-url="https://www.crossref.org/site-search/?query={query}">Crossref</option>
 
            <option class="select-header">- Encyclopedia -</option>
 
-           <option data-category="tool" data-url="https://en.wikipedia.org/w/index.php?search={query}&title=Special:Search&profile=advanced&fulltext=1">Wikipedia</option>
-           <option data-category="tool" data-url="https://en.wiktionary.org/w/index.php?search={query}&title=Special%253ASearch&profile=advanced&fulltext=1">Wiktionary</option>
-           <option data-category="tool" data-url="https://www.wikidata.org/w/index.php?search={query}&language=en&title=Special%253ASearch">Wikidata</option>
-           <option data-category="tool" data-url="https://www.britannica.com/search?query={query}">Britannica</option>
+           <option value="Wikipedia" data-category="tool" data-url="https://en.wikipedia.org/w/index.php?search={query}&title=Special:Search&profile=advanced&fulltext=1">Wikipedia</option>
+           <option value="Wiktionary" data-category="tool" data-url="https://en.wiktionary.org/w/index.php?search={query}&title=Special%253ASearch&profile=advanced&fulltext=1">Wiktionary</option>
+           <option value="Wikidata" data-category="tool" data-url="https://www.wikidata.org/w/index.php?search={query}&language=en&title=Special%253ASearch">Wikidata</option>
+           <option value="Britannica" data-category="tool" data-url="https://www.britannica.com/search?query={query}">Britannica</option>
 
 
             <option class="select-header">- Packages -</option>
 
-            <option data-category="tool" data-url="https://repology.org/projects/?search={query}">Repology</option>
-            <option data-category="tool" data-url="https://pkgs.org/search/?q={query}">Linux Packages</option>
-            <option data-category="tool" data-url="https://community.chocolatey.org/packages?q={query}">chocolatey</option>
-            <option data-category="tool" data-url="https://pypi.org/search/?q={query}">PyPI</option>
-            <option data-category="tool" data-url="https://www.npmjs.com/search?q={query}">npm</option>
-            <option data-category="tool" data-url="https://crates.io/search?q={query}">crates</option>
-            <option data-category="tool" data-url="https://rubygems.org/search?query={query}">RubyGems</option>
-            <option data-category="tool" data-url="https://www.nuget.org/packages?q={query}">NuGet</option>
-            <option data-category="tool" data-url="https://packagist.org/search/?query={query}">Packagist</option>
-            <option data-category="tool" data-url="https://mvnrepository.com/search?q={query}">Maven Repository</option>
-            <option data-category="tool" data-url="https://pkg.go.dev/search?q={query}">pkg.go.dev</option>
-            <option data-category="tool" data-url="https://pub.dev/packages?q={query}">pub.dev</option>
-            <option data-category="tool" data-url="https://search.r-project.org/?P={query}">R Packages</option>
-            <option data-category="tool" data-url="https://metacpan.org/search?q={query}">MetaCPAN</option>
+            <option value="Repology" data-category="tool" data-url="https://repology.org/projects/?search={query}">Repology</option>
+            <option value="Linux Packages" data-category="tool" data-url="https://pkgs.org/search/?q={query}">Linux Packages</option>
+            <option value="chocolatey" data-category="tool" data-url="https://community.chocolatey.org/packages?q={query}">chocolatey</option>
+            <option value="PyPI" data-category="tool" data-url="https://pypi.org/search/?q={query}">PyPI</option>
+            <option value="npm" data-category="tool" data-url="https://www.npmjs.com/search?q={query}">npm</option>
+            <option value="crates" data-category="tool" data-url="https://crates.io/search?q={query}">crates</option>
+            <option value="RubyGems" data-category="tool" data-url="https://rubygems.org/search?query={query}">RubyGems</option>
+            <option value="NuGet" data-category="tool" data-url="https://www.nuget.org/packages?q={query}">NuGet</option>
+            <option value="Packagist" data-category="tool" data-url="https://packagist.org/search/?query={query}">Packagist</option>
+            <option value="Maven Repository" data-category="tool" data-url="https://mvnrepository.com/search?q={query}">Maven Repository</option>
+            <option value="pkg.go.dev" data-category="tool" data-url="https://pkg.go.dev/search?q={query}">pkg.go.dev</option>
+            <option value="pub.dev" data-category="tool" data-url="https://pub.dev/packages?q={query}">pub.dev</option>
+            <option value="R Packages" data-category="tool" data-url="https://search.r-project.org/?P={query}">R Packages</option>
+            <option value="MetaCPAN" data-category="tool" data-url="https://metacpan.org/search?q={query}">MetaCPAN</option>
 
             <option class="select-header">- Documentation -</option>
 
-            <option data-category="tool" data-url="https://devdocs.io/#q={query}">DevDocs</option>
-            <option data-category="tool" data-url="https://developer.mozilla.org/en-US/search?q={query}">MDN Docs</option>
-            <option data-category="tool" data-url="https://learn.microsoft.com/en-us/search/?terms={query}">Microsoft Learn</option>
-            <option data-category="tool" data-url="https://www.die.net/search/#gsc.q={query}">Linux man Pages</option>
-            <option data-category="tool" data-url="https://docs.python.org/3/search.html?q={query}">Python3</option>
-            <option data-category="tool" data-url="https://doc.rust-lang.org/stable/std/index.html?search={query}">Rust Stable</option>
-            <option data-category="tool" data-url="https://docs.oracle.com/search/?q={query}&category=java">Java</option>
+            <option value="DevDocs" data-category="tool" data-url="https://devdocs.io/#q={query}">DevDocs</option>
+            <option value="MDN Docs" data-category="tool" data-url="https://developer.mozilla.org/en-US/search?q={query}">MDN Docs</option>
+            <option value="Microsoft Learn" data-category="tool" data-url="https://learn.microsoft.com/en-us/search/?terms={query}">Microsoft Learn</option>
+            <option value="Linux man Pages" data-category="tool" data-url="https://www.die.net/search/#gsc.q={query}">Linux man Pages</option>
+            <option value="Python3" data-category="tool" data-url="https://docs.python.org/3/search.html?q={query}">Python3</option>
+            <option value="Rust Stable" data-category="tool" data-url="https://doc.rust-lang.org/stable/std/index.html?search={query}">Rust Stable</option>
+            <option value="Java" data-category="tool" data-url="https://docs.oracle.com/search/?q={query}&category=java">Java</option>
 
             <option class="select-header">- Containers & DevOps -</option>
 
-            <option data-category="tool" data-url="https://hub.docker.com/search?q={query}">Docker Hub</option> 
-            <option data-category="tool" data-url="https://artifacthub.io/packages/search?ts_query_web={query}">Artifact Hub</option>
+            <option value="Docker Hub" data-category="tool" data-url="https://hub.docker.com/search?q={query}">Docker Hub</option> 
+            <option value="Artifact Hub" data-category="tool" data-url="https://artifacthub.io/packages/search?ts_query_web={query}">Artifact Hub</option>
 
             <option class="select-header">- Domains & Networking -</option>
     
-            <option data-category="tool" data-url="https://www.godaddy.com/whois/results.aspx?domain={query}">WHOIS Lookup</option>
-            <option data-category="tool" data-url="https://www.nslookup.io/ip/{query}/domain-names/">Reverse DNS</option> 
+            <option value="WHOIS Lookup" data-category="tool" data-url="https://www.godaddy.com/whois/results.aspx?domain={query}">WHOIS Lookup</option>
+            <option value="Reverse DNS" data-category="tool" data-url="https://www.nslookup.io/ip/{query}/domain-names/">Reverse DNS</option> 
 
             <option class="select-header">- Cybersecurity -</option>
 
-            <option data-category="tool" data-url="https://www.virustotal.com/gui/search?query={query}">VirusTotal</option>
-            <option data-category="tool" data-url="https://www.shodan.io/search?query={query}">Shodan</option> 
+            <option value="VirusTotal" data-category="tool" data-url="https://www.virustotal.com/gui/search?query={query}">VirusTotal</option>
+            <option value="Shodan" data-category="tool" data-url="https://www.shodan.io/search?query={query}">Shodan</option> 
         </datalist>
         <input id="input-search">
         </div>
         <button id="button-search">Search</button>
+    </div>
     </div>
 
     <footer>

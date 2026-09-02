@@ -4,6 +4,8 @@ const engineDatalist = document.getElementById('engineDatalist');
 const inputSearch = document.getElementById('input-search');
 const buttonSearch = document.getElementById('button-search');
 
+let engineChoice = document.getElementById('default-engine');
+
 function startTimeLoop() {
     // Set time once at start, so it is not blank for an ENTIRE second!
     const date = new Date;
@@ -62,13 +64,12 @@ function looksLikeURL(input) {
 }
 
 function checkIfTool() {
-    currentInputValue = engineSelectInput.value;
+    const currentInputValue = engineSelectInput.value;
     const matchedOption = Array.from(engineDatalist.options).find(
         option => option.value === currentInputValue
     );
-    const urlPattern = matchedOption.getAttribute('data-category');
 
-    return urlPattern === 'tool';
+    return matchedOption ? matchedOption.getAttribute('data-category') === 'tool' : false;
 }
 
 function getSearchURL(query) {
@@ -77,7 +78,7 @@ function getSearchURL(query) {
         option => option.value === currentInputValue
     );
 
-    const urlPattern = matchedOption.getAttribute('data-url');
+    const urlPattern = matchedOption ? matchedOption.getAttribute('data-url') : null;
     
     return urlPattern.replace('{query}', query);
 }
@@ -90,7 +91,7 @@ function search() {
     const isUrl = looksLikeURL(userInput);
     if (checkIfTool() === true) {
         const safeSearch = encodeURIComponent(userInput);
-        url = getSearchURL(userInput);
+        url = getSearchURL(safeSearch);
     } else if (isUrl) {
         url = isUrl;
     } else {
@@ -104,6 +105,8 @@ function search() {
 document.addEventListener('DOMContentLoaded', () => {
     // Start the set time loop
     startTimeLoop();
+
+    const element = document.getElementById('default-engine');
 
     inputSearch.focus(); // Automatically focus onto input on page load
 });
@@ -124,8 +127,18 @@ inputSearch.addEventListener('keydown', e => {
     }
 });
 
+engineSelectInput.addEventListener('blur', () => {
+    const currentInputValue = engineSelectInput.value;
+
+    if (!currentInputValue) { 
+        engineSelectInput.value = typeof engineChoice === 'string' ? engineChoice : (engineChoice.value || engineChoice.textContent.trim());
+    } else {
+        engineChoice = engineSelectInput.value;
+    }
+});
+
 engineSelectInput.addEventListener('click', () => {
-    engineSelectInput.value = '';
+    engineSelectInput.select();
     try {
         engineSelectInput.showPicker();
     } catch (err) {
