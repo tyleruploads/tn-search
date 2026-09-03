@@ -6,6 +6,10 @@ const buttonSearch = document.getElementById('button-search');
 
 let engineChoice = document.getElementById('default-engine');
 
+function saveEngineChoice(engineChoice) {
+    localStorage.setItem("engineChoice", engineChoice);
+}
+
 function startTimeLoop() {
     // Set time once at start, so it is not blank for an ENTIRE second!
     const date = new Date;
@@ -73,7 +77,7 @@ function checkIfTool() {
 }
 
 function getSearchURL(query) {
-    currentInputValue = engineSelectInput.value;
+    const currentInputValue = engineSelectInput.value;
     const matchedOption = Array.from(engineDatalist.options).find(
         option => option.value === currentInputValue
     );
@@ -106,7 +110,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Start the set time loop
     startTimeLoop();
 
-    const element = document.getElementById('default-engine');
+    // Check if engineChoice saved to localStorage 
+
+    const savedEngineChoice = localStorage.getItem('engineChoice');
+    if (savedEngineChoice !== null) {
+        const matchedOption = Array.from(engineDatalist.options).find(
+        option => option.value === savedEngineChoice
+        );
+        engineChoice = matchedOption || savedEngineChoice;
+        engineSelectInput.value = savedEngineChoice;
+    }
 
     inputSearch.focus(); // Automatically focus onto input on page load
 });
@@ -131,9 +144,10 @@ engineSelectInput.addEventListener('blur', () => {
     const currentInputValue = engineSelectInput.value;
 
     if (!currentInputValue) { 
-        engineSelectInput.value = typeof engineChoice === 'string' ? engineChoice : (engineChoice.value || engineChoice.textContent.trim());
+        engineSelectInput.value = typeof engineChoice === 'string' ? engineChoice : (engineChoice?.value || engineChoice?.textContent?.trim() || '');
     } else {
         engineChoice = engineSelectInput.value;
+        saveEngineChoice(engineChoice);
     }
 });
 

@@ -20,6 +20,7 @@ Try it out, right now!
 - **50+ Search Engines and Tools:** Categories of search engines and tools include The Classics, Privacy, AI, Code, Academic & Research, Encyclopedia, Packages, Documentation, Containers & DevOps, Domains & Networking, and Cybersecurity.
 - **Developer First**: Built for developers who want one page where everything they need is right in front of them.
 - **Search**: Search through all of the search engines and tools, no need to find them yourself.
+- **Saves Search Provider Choices Locally**: No accounts, no logins, just local storage! Absolutely no data is being sent to TN Search about you!
 - **Privacy & Security**: No tracking, telemetry, ads, accounts, or any other sneaky data collection.
 
 See [search-providers.md](search-providers.md) to view a full list of categorized search engines and tools.
